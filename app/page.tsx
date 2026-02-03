@@ -37,6 +37,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -478,6 +486,51 @@ export default function Home() {
                         `}
                       />
                     </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle>CRUD control center</CardTitle>
+                    <CardDescription>Drawer & modal interactions for quick workflows.</CardDescription>
+                  </CardHeader>
+                  <CardContent className="grid gap-3 sm:grid-cols-2">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="secondary">Open modal</Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DialogHeader>
+                          <DialogTitle>Create fulfillment rule</DialogTitle>
+                          <DialogDescription>
+                            Configure automated routing and save instantly.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="space-y-3 text-sm text-text-muted">
+                          <div className="rounded-2xl border border-slate-200/70 p-3 dark:border-slate-800">
+                            Assign high-value orders to white-glove logistics.
+                          </div>
+                          <Button>Save rule</Button>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="secondary">Open drawer</Button>
+                      </DialogTrigger>
+                      <DialogContent side="right" className="w-[360px]">
+                        <DialogHeader>
+                          <DialogTitle>Order drawer</DialogTitle>
+                          <DialogDescription>Slide-in context for editing.</DialogDescription>
+                        </DialogHeader>
+                        <div className="space-y-3 text-sm text-text-muted">
+                          <div className="rounded-2xl border border-slate-200/70 p-3 dark:border-slate-800">
+                            Update shipping priority and add internal notes.
+                          </div>
+                          <Button>Update order</Button>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </CardContent>
                 </Card>
 
